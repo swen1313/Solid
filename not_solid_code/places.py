@@ -1,5 +1,6 @@
 class Kostroma:
     city_name = 'Kostroma'
+    coordinates = [57.46, 40.56]
 
     def get_orcs(self):
         print('Orcs hid in the forest')
