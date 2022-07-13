@@ -1,0 +1,18 @@
+class CyclicIterator:
+    def __init__(self, iter_obj):
+        self.iter_obj = iter_obj
+        self.iter = iter(iter_obj)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        try:
+            return next(self.iter)
+        except StopIteration:
+            self.iter = iter(self.iter_obj)
+            return next(self.iter)
+
+cyclic_iterator = CyclicIterator(range(3))
+for i in cyclic_iterator:
+    print(i)
