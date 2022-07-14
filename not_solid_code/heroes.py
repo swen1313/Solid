@@ -15,11 +15,11 @@ class SuperHero(ABC):
 
     @abstractmethod
     def attack(self):
-        ...
+        pass
 
     @abstractmethod
     def ultimate(self):
-        ...
+        pass
 
 
 class Superman(LaserMixin, PunchMixin, SuperHero):
