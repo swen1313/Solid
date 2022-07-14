@@ -1,19 +1,10 @@
-from places import Kostroma, Tokyo
-from abc import ABC, abstractmethod
+from places import Place
 
 
-class Place(ABC):
+class AntagonistFinder:
 
-    @abstractmethod
-    def get_antagonist(self, place):
-        pass
-
-
-class AntagonistFinder(Place):
-
-    def get_antagonist(self, place):
-        if isinstance(place, Kostroma):
-            place.get_orcs()
-        elif isinstance(place, Tokyo):
-            place.get_godzilla()
+    def get_antagonist(self, place: Place):
+        place.get_antagonist()          
+            
+            
 
