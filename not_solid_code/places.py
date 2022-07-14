@@ -1,13 +1,27 @@
-class Kostroma:
-    city_name = 'Kostroma'
-    coordinates = [57.46, 40.56]
+from abc import ABC, abstractmethod
 
-    def get_orcs(self):
+
+class Place(ABC):
+
+    @property
+    @abstractmethod
+    def name(self):
+        ...
+
+    @abstractmethod
+    def get_antagonist():
+        ...
+
+
+class Kostroma(Place):
+    name = 'Kostroma'
+
+    def get_antagonist(self):
         print('Orcs hid in the forest')
 
 
-class Tokyo:
+class Tokyo(Place):
     name = 'Tokyo'
 
-    def get_godzilla(self):
+    def get_antagonist(self):
         print('Godzilla stands near a skyscraper')
