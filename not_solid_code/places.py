@@ -6,11 +6,11 @@ class Place(ABC):
     @property
     @abstractmethod
     def name(self):
-        ...
+        pass
 
     @abstractmethod
     def get_antagonist():
-        ...
+        pass
 
 
 class Kostroma(Place):
