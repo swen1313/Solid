@@ -1,20 +1,22 @@
-from typing import Union
-from heroes import Superman, SuperHero
-from places import Kostroma, Tokyo
+from heroes import SuperHero, Superman, ChuckNorris
+from places import Place, Tokyo, Kostroma
+from antagonistfinder import AntagonistFinder
+from media import Media
 
 
-def save_the_place(hero: SuperHero, place: Union[Kostroma, Tokyo]):
+def save_the_place(hero: SuperHero, place: Place, media: Media):
     hero.find(place)
     hero.attack()
     if hero.can_use_ultimate_attack:
         hero.ultimate()
-    hero.create_news(place)
-    hero.create_news_for_planets(place)
+    media.create_news(hero, place)
 
 
 if __name__ == '__main__':
-    save_the_place(Superman(), Kostroma())
+    media = Media()
+
+    save_the_place(Superman(), Kostroma(), media)
     print('-' * 20)
-    save_the_place(SuperHero('Chack Norris', False), Tokyo())
+    save_the_place(ChuckNorris(), Tokyo(), media)
 
 
