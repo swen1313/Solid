@@ -22,7 +22,7 @@ class SuperHero(ABC):
         ...
 
 
-class Superman(LaserMixin, FistMixin, SuperHero):
+class Superman(LaserMixin, PunchMixin, SuperHero):
 
     def __init__(self):
         super().__init__('Clark Kent', True)
